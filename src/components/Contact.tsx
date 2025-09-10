@@ -1,0 +1,228 @@
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from "lucide-react";
+
+const Contact = () => {
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Alamat",
+      content: "JL. Kh. Hasim Asyári, Purwotengah, Kec. Papar, Kabupaten Kediri, Jawa Timur 64153",
+      color: "text-blue-500"
+    },
+    {
+      icon: Phone,
+      title: "Telepon",
+      content: "(0354) 2892670",
+      color: "text-green-500"
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      content: "info@smkarrahmahkediri.sch.id",
+      color: "text-purple-500"
+    },
+    {
+      icon: Clock,
+      title: "Jam Operasional",
+      content: "Senin - Jumat: 07:00 - 16:00 WIB\nSabtu: 07:00 - 12:00 WIB",
+      color: "text-orange-500"
+    },
+  ];
+
+  const socialMedia = [
+    {
+      icon: Facebook,
+      name: "Facebook",
+      url: "#",
+      color: "hover:text-blue-600",
+      bgColor: "hover:bg-blue-50"
+    },
+    {
+      icon: Instagram,
+      name: "Instagram", 
+      url: "#",
+      color: "hover:text-pink-600",
+      bgColor: "hover:bg-pink-50"
+    },
+    {
+      icon: Youtube,
+      name: "YouTube",
+      url: "#",
+      color: "hover:text-red-600",
+      bgColor: "hover:bg-red-50"
+    },
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-primary-soft/30">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <Badge variant="secondary" className="mb-4 text-sm font-medium">
+            Hubungi Kami
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Kontak & Informasi
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Butuh informasi lebih lanjut? Jangan ragu untuk menghubungi kami melalui berbagai cara di bawah ini
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Contact Information */}
+          <div className="lg:col-span-1">
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <Card key={index} className="p-6 bg-gradient-card shadow-soft">
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0`}>
+                      <info.icon className={`h-6 w-6 ${info.color}`} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">{info.title}</h4>
+                      <p className="text-sm text-muted-foreground whitespace-pre-line">
+                        {info.content}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+
+              {/* Social Media */}
+              <Card className="p-6 bg-gradient-card shadow-soft">
+                <h4 className="font-semibold text-foreground mb-4">Ikuti Kami</h4>
+                <div className="flex gap-3">
+                  {socialMedia.map((social, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      size="sm"
+                      className={`w-12 h-12 p-0 ${social.bgColor} ${social.color} transition-all duration-300`}
+                      asChild
+                    >
+                      <a href={social.url} target="_blank" rel="noopener noreferrer">
+                        <social.icon className="h-5 w-5" />
+                      </a>
+                    </Button>
+                  ))}
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Dapatkan update terbaru tentang SMK Arrahmah
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <Card className="p-8 bg-gradient-card shadow-soft">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Kirim Pesan</h3>
+              
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Nama Lengkap *
+                    </label>
+                    <Input 
+                      placeholder="Masukkan nama lengkap Anda" 
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Email *
+                    </label>
+                    <Input 
+                      type="email" 
+                      placeholder="nama@email.com" 
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Nomor Telepon
+                    </label>
+                    <Input 
+                      placeholder="08xxxxxxxxxx" 
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Jurusan yang Diminati
+                    </label>
+                    <select className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm">
+                      <option value="">Pilih Jurusan</option>
+                      <option value="TKR">TKR - Teknik Kendaraan Ringan</option>
+                      <option value="TSM">TSM - Teknik Sepeda Motor</option>
+                      <option value="TKJ">TKJ - Teknik Komputer dan Jaringan</option>
+                      <option value="APHP">APHP - Agribisnis Pengolahan Hasil Pertanian</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Pesan *
+                  </label>
+                  <Textarea 
+                    placeholder="Tuliskan pertanyaan atau informasi yang ingin Anda tanyakan..."
+                    className="w-full min-h-[120px]"
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-gradient-primary text-white font-semibold"
+                >
+                  Kirim Pesan
+                </Button>
+              </form>
+
+              <div className="mt-6 p-4 bg-primary-soft rounded-lg">
+                <p className="text-sm text-muted-foreground text-center">
+                  Dengan mengirim pesan ini, Anda menyetujui bahwa data akan digunakan untuk keperluan komunikasi resmi SMK Arrahmah
+                </p>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-12">
+          <Card className="overflow-hidden shadow-soft">
+            <div className="p-6 bg-gradient-card">
+              <h3 className="text-xl font-bold text-foreground mb-2">Lokasi SMK Arrahmah</h3>
+              <p className="text-muted-foreground">
+                JL. Kh. Hasim Asyári, Purwotengah, Kec. Papar, Kabupaten Kediri, Jawa Timur
+              </p>
+            </div>
+            <div className="h-64 bg-muted flex items-center justify-center">
+              <div className="text-center">
+                <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
+                <p className="text-muted-foreground">
+                  Peta lokasi akan ditampilkan di sini
+                </p>
+                <Button variant="outline" className="mt-3">
+                  Buka di Google Maps
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
