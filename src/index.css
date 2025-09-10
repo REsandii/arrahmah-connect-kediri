@@ -42,19 +42,25 @@
 
     --radius: 0.75rem;
 
-    /* Islamic Gradients */
+    /* Modern Islamic Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(140 70% 35%));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(140 70% 35%) 50%, hsl(var(--secondary)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(140 5% 98%));
-
-    /* Shadows with Islamic Green */
+    --gradient-glass: linear-gradient(145deg, hsl(var(--card) / 0.8), hsl(140 5% 98% / 0.9));
+    --gradient-success: linear-gradient(135deg, hsl(140 60% 50%), hsl(140 70% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--secondary)), hsl(45 85% 55%));
+    
+    /* Modern Shadows with Depth */
     --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
     --shadow-medium: 0 8px 30px -6px hsl(var(--primary) / 0.15);
     --shadow-strong: 0 20px 40px -12px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-inner: inset 0 2px 4px hsl(var(--primary) / 0.05);
 
     /* Smooth Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     /* Sidebar Variables */
     --sidebar-background: 0 0% 98%;
@@ -125,5 +131,59 @@
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary/50;
+  }
+
+  /* Modern Utility Classes */
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Modern Card Variants */
+  .card-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-smooth);
+  }
+
+  .card-elevated:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
   }
 }
