@@ -168,8 +168,11 @@ const Footer = () => {
                 variant="secondary" 
                 size="sm" 
                 className="w-full font-semibold bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-medium hover-lift"
+                asChild
               >
-                Daftar Sekarang 🎓
+                <a href="https://daftar.smkarrahmahkediri.sch.id/" target="_blank" rel="noopener noreferrer">
+                  Daftar Sekarang 🎓
+                </a>
               </Button>
             </div>
           </div>
