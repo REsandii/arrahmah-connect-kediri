@@ -153,8 +153,10 @@ const Programs = () => {
                     <div className="ml-2 transition-transform group-hover:translate-x-1">✨</div>
                   </a>
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm hover-lift">
-                  Konsultasi Gratis
+                <Button size="lg" variant="outline" className="text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm hover-lift" asChild>
+                  <a href="https://wa.me/6285890009991" target="_blank" rel="noopener noreferrer">
+                    Konsultasi Gratis
+                  </a>
                 </Button>
               </div>
             </div>

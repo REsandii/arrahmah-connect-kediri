@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Programs from "@/components/Programs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Programs />
       <Contact />
       <Footer />
+      <WhatsAppChat />
     </div>
   );
 };

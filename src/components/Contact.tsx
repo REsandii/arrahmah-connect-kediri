@@ -195,11 +195,14 @@ const Contact = () => {
                   </div>
 
                   <Button 
-                    type="submit" 
+                    type="button" 
                     size="lg" 
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold shadow-medium hover-lift"
+                    asChild
                   >
-                    Kirim Pesan ✉️
+                    <a href="https://wa.me/6285890009991" target="_blank" rel="noopener noreferrer">
+                      Kirim Pesan ✉️
+                    </a>
                   </Button>
                 </form>
 
