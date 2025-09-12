@@ -41,9 +41,11 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="text-lg font-semibold bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow hover-lift group">
-                <span>Daftar Sekarang</span>
-                <div className="ml-2 transition-transform group-hover:translate-x-1">→</div>
+              <Button size="lg" className="text-lg font-semibold bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-glow hover-lift group" asChild>
+                <a href="https://daftar.smkarrahmahkediri.sch.id/" target="_blank" rel="noopener noreferrer">
+                  <span>Daftar Sekarang</span>
+                  <div className="ml-2 transition-transform group-hover:translate-x-1">→</div>
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm hover-lift">
                 Pelajari Lebih Lanjut

@@ -46,8 +46,10 @@ const Header = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             ))}
-            <Button size="sm" className="ml-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-medium hover-lift">
-              Daftar
+            <Button size="sm" className="ml-4 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-medium hover-lift" asChild>
+              <a href="https://daftar.smkarrahmahkediri.sch.id/" target="_blank" rel="noopener noreferrer">
+                Daftar
+              </a>
             </Button>
           </nav>
 
@@ -76,8 +78,10 @@ const Header = () => {
               </a>
             ))}
             <div className="pt-2">
-              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-secondary text-white">
-                Daftar Sekarang
+              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-secondary text-white" asChild>
+                <a href="https://daftar.smkarrahmahkediri.sch.id/" target="_blank" rel="noopener noreferrer">
+                  Daftar Sekarang
+                </a>
               </Button>
             </div>
           </nav>
