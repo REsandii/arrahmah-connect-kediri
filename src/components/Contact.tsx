@@ -222,18 +222,17 @@ const Contact = () => {
                 JL. Kh. Hasim Asyári, Purwotengah, Kec. Papar, Kabupaten Kediri, Jawa Timur
               </p>
             </div>
-            <div className="h-64 bg-muted flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                <p className="text-muted-foreground">
-                  Peta lokasi akan ditampilkan di sini
-                </p>
-                <Button variant="outline" className="mt-3" asChild>
-                  <a href="https://maps.app.goo.gl/LG3ai29P74sHkAzb6" target="_blank" rel="noopener noreferrer">
-                    Buka di Google Maps
-                  </a>
-                </Button>
-              </div>
+            <div className="w-full h-64 md:h-96">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5873112848644!2d112.02585670885618!3d-7.7273481765417005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785072ffffffff%3A0x3e13106ce24ae6b9!2sSMK%20Arrahmah!5e0!3m2!1sid!2sid!4v1757635858247!5m2!1sid!2sid" 
+                width="100%" 
+                height="100%" 
+                style={{border:0}} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-b-lg"
+              />
             </div>
           </Card>
         </div>
