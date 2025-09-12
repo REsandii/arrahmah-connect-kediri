@@ -4,8 +4,42 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    program: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = () => {
+    const { name, email, phone, program, message } = formData;
+    
+    let whatsappMessage = `*Pesan dari Website SMK Arrahmah*\n\n`;
+    whatsappMessage += `📝 *Nama:* ${name || 'Tidak diisi'}\n`;
+    whatsappMessage += `📧 *Email:* ${email || 'Tidak diisi'}\n`;
+    whatsappMessage += `📱 *Telepon:* ${phone || 'Tidak diisi'}\n`;
+    whatsappMessage += `🎓 *Jurusan Diminati:* ${program || 'Tidak dipilih'}\n\n`;
+    whatsappMessage += `💬 *Pesan:*\n${message || 'Tidak ada pesan'}\n\n`;
+    whatsappMessage += `_Dikirim melalui website resmi SMK Arrahmah_`;
+    
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/6285890009991?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   const contactInfo = [
     {
       icon: MapPin,
@@ -144,6 +178,9 @@ const Contact = () => {
                         Nama Lengkap *
                       </label>
                       <Input 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
                         placeholder="Masukkan nama lengkap Anda" 
                         className="w-full border-primary/20 focus:border-primary/50 transition-colors duration-300"
                       />
@@ -153,6 +190,9 @@ const Contact = () => {
                         Email *
                       </label>
                       <Input 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         type="email" 
                         placeholder="nama@email.com" 
                         className="w-full border-primary/20 focus:border-primary/50 transition-colors duration-300"
@@ -166,6 +206,9 @@ const Contact = () => {
                         Nomor Telepon
                       </label>
                       <Input 
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         placeholder="08xxxxxxxxxx" 
                         className="w-full border-primary/20 focus:border-primary/50 transition-colors duration-300"
                       />
@@ -174,7 +217,12 @@ const Contact = () => {
                       <label className="text-sm font-medium text-foreground mb-2 block">
                         Jurusan yang Diminati
                       </label>
-                      <select className="w-full px-3 py-2 border border-primary/20 bg-background rounded-md text-sm focus:border-primary/50 transition-colors duration-300">
+                      <select 
+                        name="program"
+                        value={formData.program}
+                        onChange={handleInputChange}
+                        className="w-full px-3 py-2 border border-primary/20 bg-background rounded-md text-sm focus:border-primary/50 transition-colors duration-300"
+                      >
                         <option value="">Pilih Jurusan</option>
                         <option value="TKR">TKR - Teknik Kendaraan Ringan</option>
                         <option value="TSM">TSM - Teknik Sepeda Motor</option>
@@ -189,6 +237,9 @@ const Contact = () => {
                       Pesan *
                     </label>
                     <Textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Tuliskan pertanyaan atau informasi yang ingin Anda tanyakan..."
                       className="w-full min-h-[120px] border-primary/20 focus:border-primary/50 transition-colors duration-300"
                     />
@@ -197,12 +248,10 @@ const Contact = () => {
                   <Button 
                     type="button" 
                     size="lg" 
+                    onClick={handleSubmit}
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-semibold shadow-medium hover-lift"
-                    asChild
                   >
-                    <a href="https://wa.me/6285890009991" target="_blank" rel="noopener noreferrer">
-                      Kirim Pesan ✉️
-                    </a>
+                    Kirim Pesan ✉️
                   </Button>
                 </form>
 
