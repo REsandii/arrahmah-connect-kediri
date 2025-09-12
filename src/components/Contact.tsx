@@ -228,8 +228,10 @@ const Contact = () => {
                 <p className="text-muted-foreground">
                   Peta lokasi akan ditampilkan di sini
                 </p>
-                <Button variant="outline" className="mt-3">
-                  Buka di Google Maps
+                <Button variant="outline" className="mt-3" asChild>
+                  <a href="https://maps.app.goo.gl/LG3ai29P74sHkAzb6" target="_blank" rel="noopener noreferrer">
+                    Buka di Google Maps
+                  </a>
                 </Button>
               </div>
             </div>
