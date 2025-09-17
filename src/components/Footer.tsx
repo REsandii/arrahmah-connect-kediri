@@ -21,19 +21,19 @@ const Footer = () => {
     {
       icon: Facebook,
       name: "Facebook",
-      url: "#",
+      url: "https://www.facebook.com/SmkPlusArrahmah/",
       color: "hover:text-blue-600"
     },
     {
       icon: Instagram,
       name: "Instagram", 
-      url: "#",
+      url: "https://www.instagram.com/smkarrahmah_kediri/",
       color: "hover:text-pink-600"
     },
     {
       icon: Youtube,
       name: "YouTube",
-      url: "#",
+      url: "https://m.youtube.com/@smkarrahmahkediri",
       color: "hover:text-red-600"
     },
   ];
