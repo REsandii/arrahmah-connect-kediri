@@ -90,7 +90,7 @@ const Hero = () => {
                   <div className="relative inline-block">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-lg opacity-30 scale-110"></div>
                     <img 
-                      src="/lovable-uploads/fa7fdbca-b178-45ea-98d7-99940ba652b4.png" 
+                      src="/uploads/fa7fdbca-b178-45ea-98d7-99940ba652b4.png" 
                       alt="Logo SMK Arrahmah"
                       className="relative h-28 w-28 mx-auto object-contain drop-shadow-lg"
                     />
