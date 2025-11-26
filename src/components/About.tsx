@@ -5,9 +5,9 @@ import { BookOpen, Users, Award, Target } from "lucide-react";
 const About = () => {
   const achievements = [
     { number: "500+", label: "Siswa Aktif" },
-    { number: "95%", label: "Tingkat Kelulusan" },
+    { number: "99%", label: "Tingkat Kelulusan" },
     { number: "85%", label: "Siswa Bekerja" },
-    { number: "15+", label: "Tahun Pengalaman" },
+    { number: "25+", label: "Tahun Pengalaman" },
   ];
 
   const values = [
