@@ -52,7 +52,7 @@ const Footer = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-secondary/30 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <img 
-                  src="/lovable-uploads/fa7fdbca-b178-45ea-98d7-99940ba652b4.png" 
+                  src="/uploads/fa7fdbca-b178-45ea-98d7-99940ba652b4.png" 
                   alt="Logo SMK Arrahmah"
                   className="relative h-12 w-12 object-contain drop-shadow-lg"
                 />
